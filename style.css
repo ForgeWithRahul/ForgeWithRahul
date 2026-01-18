@@ -1,10 +1,132 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; overflow-x: hidden; background: #f4f6f8; }
-header { text-align: center; background: linear-gradient(90deg,#007bff,#00bcd4); color: white; padding: 40px 20px; }
-nav { background: #007bff; padding: 15px; text-align: center; position: sticky; top: 0; }
-nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
-nav a:hover { text-decoration: underline; }
-section { margin: 40px auto; padding: 30px; max-width: 1100px; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-section h2 { text-align: center; margin-bottom: 20px; }
-section ul { line-height: 1.8; }
-section a { color: #007bff; text-decoration: none; }
-section a:hover { text-decoration: underline; }
+/* ===== BASIC RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #1c1c1c, #2c2c54);
+  color: #f4f4f4;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  animation: fadeInDown 2s ease;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+header p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  margin: 50px auto;
+  padding: 40px;
+  max-width: 1100px;
+  background: linear-gradient(145deg, #3a3a52, #2c2c54);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  animation: fadeInUp 2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #ffb347;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+section p, section ul, section li {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+section ul li {
+  margin-left: 20px;
+  list-style-type: square;
+}
+
+section a {
+  color: #ff4b2b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+section a:hover {
+  color: #ff916c;
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(50px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-50px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== LINKS AND HOVER EFFECTS ===== */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ffd700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+  header h1 { font-size: 2.2rem; }
+  section h2 { font-size: 2rem; }
+  section { padding: 30px; margin: 30px 20px; }
+  body { line-height: 1.6; }
+}
+
+/* ===== EXTRA STYLING ===== */
+section ul li::marker {
+  color: #ffb347;
+}
+
+p strong {
+  color: #ff916c;
+}
