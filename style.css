@@ -275,4 +275,44 @@ section img {
 
 section img:hover {
   transform: scale(1.1) rotateY(10deg);
+}#videoScreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: black;
 }
+
+#videoScreen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#videoScreen button {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 40px;
+  background: #00ffcc;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#loginScreen {
+  height: 100vh;
+  background: radial-gradient(circle, #020c1b, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #00ffcc;
+}
+
+#loginScreen input {
+  margin: 10px;
+  padding: 12px;
+  width: 250px;
+}
+
