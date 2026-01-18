@@ -9,7 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body><!-- ========== LOADING SCREEN ========== -->
+<div id="loader">
+  <h1 class="glow">ForgeWithRahul</h1>
+  <p>Initializing AI Systems...</p>
+</div>
+  
 
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
@@ -22,14 +27,24 @@
     <li><a href="#career">Career</a></li>
     <li><a href="#help">Help</a></li>
   </ul>
-</nav>
+</nav><!-- ========== LOGIN SCREEN ========== -->
+<div id="loginScreen">
+  <h2>Enter Your Hacker Name</h2>
+  <input type="text" id="username" placeholder="Your Name">
+  <button onclick="enterSite()">Proceed</button>
+</div>
 
 <!-- ================= HERO ================= -->
 <header id="home">
   <h1>ForgeWithRahul</h1>
   <p class="tagline">Learn AI • Cyber Security • Ethical Hacking • Future Tech</p>
   <img src="https://images.unsplash.com/photo-1581092795366-7b5b7c6a56f1" alt="AI Banner" class="hero-img">
-</header>
+</header><section>
+  <h2>Future Tech Gallery</h2>
+  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1">
+  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+  <img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f">
+</section>
 
 <!-- ================= INTRO ================= -->
 <section>
@@ -214,9 +229,14 @@
 <p>AI & Cyber Security will dominate technology, finance, healthcare, and governance. Skilled professionals will always be in demand.</p>
 </section>
 
-<footer>
+<footer><script>
+function enterSite() {
+  document.getElementById("loginScreen").style.display = "none";
+}
+</script>
 <p>© 2026 ForgeWithRahul | Built for learners & innovators</p>
 </footer>
 
 </body>
 </html>
+
