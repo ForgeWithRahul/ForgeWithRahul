@@ -9,7 +9,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
-<body><!-- ========== LOADING SCREEN ========== -->
+<body><!-- LOGIN + LOADER WRAPPER -->
+<div id="entryGate">
+
+  <!-- VIDEO / LOADING SCREEN -->
+  <div id="videoScreen">
+    <video autoplay muted loop>
+      <source src="https://cdn.coverr.co/videos/coverr-hacker-working-on-computer-8056/1080p.mp4" type="video/mp4">
+    </video>
+    <button onclick="showLogin()">ENTER SYSTEM</button>
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginScreen" style="display:none;">
+    <h2>Secure Login</h2>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <button onclick="enterSite()">VERIFY & LOGIN</button>
+  </div>
+
+</div><!-- ========== LOADING SCREEN ========== -->
 <div id="loader">
   <h1 class="glow">ForgeWithRahul</h1>
   <p>Initializing AI Systems...</p>
@@ -17,8 +37,22 @@
   
 
 <!-- ================= NAVBAR ================= -->
+  <div id="mainSite" style="display:none;">
 <nav class="navbar">
-  <div class="logo">☰ ForgeWithRahul</div>
+  <div class="logo">☰ ForgeWithRahul<div id="mainSite">
+  <!-- TERA PURA WEBSITE ANDAR -->
+</div><script>
+function showLogin() {
+  document.getElementById("videoScreen").style.display = "none";
+  document.getElementById("loginScreen").style.display = "block";
+}
+
+function enterSite() {
+  document.getElementById("entryGate").style.display = "none";
+  document.getElementById("mainSite").style.display = "block";
+}
+</script> 
+    
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#notification">Notification</a></li>
@@ -239,4 +273,5 @@ function enterSite() {
 
 </body>
 </html>
+
 
