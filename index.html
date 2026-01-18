@@ -9,50 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
-<body><!-- LOGIN + LOADER WRAPPER -->
-<div id="entryGate">
-
-  <!-- VIDEO / LOADING SCREEN -->
-  <div id="videoScreen">
-    <video autoplay muted loop>
-      <source src="https://cdn.coverr.co/videos/coverr-hacker-working-on-computer-8056/1080p.mp4" type="video/mp4">
-    </video>
-    <button onclick="showLogin()">ENTER SYSTEM</button>
-  </div>
-
-  <!-- LOGIN SCREEN -->
-  <div id="loginScreen" style="display:none;">
-    <h2>Secure Login</h2>
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <input type="tel" placeholder="Phone Number" required>
-    <button onclick="enterSite()">VERIFY & LOGIN</button>
-  </div>
-
-</div><!-- ========== LOADING SCREEN ========== -->
-<div id="loader">
-  <h1 class="glow">ForgeWithRahul</h1>
-  <p>Initializing AI Systems...</p>
-</div>
-  
+<body>
 
 <!-- ================= NAVBAR ================= -->
-  <div id="mainSite" style="display:none;">
 <nav class="navbar">
-  <div class="logo">☰ ForgeWithRahul<div id="mainSite">
-  <!-- TERA PURA WEBSITE ANDAR -->
-</div><script>
-function showLogin() {
-  document.getElementById("videoScreen").style.display = "none";
-  document.getElementById("loginScreen").style.display = "block";
-}
-
-function enterSite() {
-  document.getElementById("entryGate").style.display = "none";
-  document.getElementById("mainSite").style.display = "block";
-}
-</script> 
-    
+  <div class="logo">☰ ForgeWithRahul</div>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#notification">Notification</a></li>
@@ -61,24 +22,14 @@ function enterSite() {
     <li><a href="#career">Career</a></li>
     <li><a href="#help">Help</a></li>
   </ul>
-</nav><!-- ========== LOGIN SCREEN ========== -->
-<div id="loginScreen">
-  <h2>Enter Your Hacker Name</h2>
-  <input type="text" id="username" placeholder="Your Name">
-  <button onclick="enterSite()">Proceed</button>
-</div>
+</nav>
 
 <!-- ================= HERO ================= -->
 <header id="home">
   <h1>ForgeWithRahul</h1>
   <p class="tagline">Learn AI • Cyber Security • Ethical Hacking • Future Tech</p>
   <img src="https://images.unsplash.com/photo-1581092795366-7b5b7c6a56f1" alt="AI Banner" class="hero-img">
-</header><section>
-  <h2>Future Tech Gallery</h2>
-  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1">
-  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
-  <img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f">
-</section>
+</header>
 
 <!-- ================= INTRO ================= -->
 <section>
@@ -263,15 +214,9 @@ function enterSite() {
 <p>AI & Cyber Security will dominate technology, finance, healthcare, and governance. Skilled professionals will always be in demand.</p>
 </section>
 
-<footer><script>
-function enterSite() {
-  document.getElementById("loginScreen").style.display = "none";
-}
-</script>
+<footer>
 <p>© 2026 ForgeWithRahul | Built for learners & innovators</p>
 </footer>
 
 </body>
 </html>
-
-
