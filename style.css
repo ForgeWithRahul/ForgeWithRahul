@@ -1,425 +1,266 @@
-/* ================= GLOBAL RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Segoe UI",sans-serif;
-}
-
+/* ================= RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  background:
-    radial-gradient(circle at top,#001a1a,#000 70%);
-  color:#e6fff9;
-  line-height:1.8;
-}
-
-/* ================= SCROLLBAR ================= */
-::-webkit-scrollbar{
-  width:10px;
-}
-::-webkit-scrollbar-track{
+  font-family:"Segoe UI",Arial,sans-serif;
   background:#000;
-}
-::-webkit-scrollbar-thumb{
-  background:linear-gradient(180deg,#00ffcc,#a855f7,#00ffcc);
-  border-radius:10px;
+  color:#eaffff;
+  overflow-x:hidden;
 }
 
-/* ================= SECTION – AVATAR BORDER ================= */
-section{
-  position:relative;
-  margin:50px 20px;
-  padding:40px;
-  border-radius:30px;
-  background:rgba(0,0,0,.65);
+/* ================= COLOR CORE ================= */
+:root{
+  --c1:#00ffe1;
+  --c2:#00aaff;
+  --c3:#6a5cff;
+  --c4:#a855f7;
+  --c5:#ff2fdc;
+  --c6:#ff9f1c;
+  --c7:#39ff14;
+  --c8:#facc15;
+}
+
+/* ================= BACKGROUND ENERGY ================= */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(0,255,225,.15),transparent 40%),
+    radial-gradient(circle at 80% 70%,rgba(168,85,247,.18),transparent 45%),
+    radial-gradient(circle at 50% 50%,rgba(255,47,220,.12),transparent 55%);
+  animation:bgmove 20s linear infinite;
+  z-index:-2;
+}
+@keyframes bgmove{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+
+/* ================= SCANLINES ================= */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.03),
+      rgba(255,255,255,.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  pointer-events:none;
+  z-index:9999;
+}
+
+/* ================= NAVBAR ================= */
+nav{
   backdrop-filter:blur(10px);
-  overflow:hidden;
+  border-bottom:2px solid transparent;
+  background:
+    linear-gradient(#000,#000) padding-box,
+    linear-gradient(90deg,var(--c1),var(--c5),var(--c2)) border-box;
 }
+nav a{
+  color:var(--c1);
+  font-weight:600;
+  position:relative;
+}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:2px;
+  background:linear-gradient(90deg,var(--c1),var(--c5));
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
 
-section::before{
+/* ================= HERO ================= */
+header{
+  position:relative;
+  text-align:center;
+  border-bottom:3px solid var(--c1);
+}
+header::before{
   content:"";
   position:absolute;
   inset:0;
-  padding:2px;
-  border-radius:30px;
-  background:linear-gradient(
-    120deg,
-    #00ffcc,
-    #00aaff,
-    #a855f7,
-    #ff0080,
-    #00ffcc
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;
-          mask-composite:exclude;
-  animation:hueSpin 6s linear infinite;
+  background:radial-gradient(circle at center,rgba(0,255,225,.35),transparent 60%);
+}
+header h1{
+  font-size:3.8rem;
+  background:linear-gradient(90deg,var(--c1),var(--c4),var(--c5));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 30px rgba(0,255,225,.8);
+}
+header p{
+  font-size:1.4rem;
+  color:#eaffff;
 }
 
-@keyframes hueSpin{
-  0%{filter:hue-rotate(0deg);}
-  100%{filter:hue-rotate(360deg);}
+/* ================= SECTION BASE ================= */
+section{
+  margin:80px 30px;
+  padding:60px;
+  border-radius:32px;
+  position:relative;
+  background:
+    linear-gradient(180deg,rgba(5,10,25,.9),rgba(0,0,0,.95));
+  overflow:hidden;
+}
+
+/* animated rainbow border */
+section::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:34px;
+  background:
+    linear-gradient(120deg,
+      var(--c1),var(--c2),var(--c3),
+      var(--c4),var(--c5),var(--c6),var(--c7)
+    );
+  z-index:-1;
+  animation:rainbow 8s linear infinite;
+}
+@keyframes rainbow{
+  0%{filter:hue-rotate(0deg)}
+  100%{filter:hue-rotate(360deg)}
+}
+
+/* ================= FLOATING PARTICLES ================= */
+section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle,rgba(0,255,225,.35) 1px,transparent 2px),
+    radial-gradient(circle,rgba(255,47,220,.35) 1px,transparent 2px),
+    radial-gradient(circle,rgba(57,255,20,.35) 1px,transparent 2px);
+  background-size:120px 120px,180px 180px,240px 240px;
+  animation:particles 18s linear infinite;
+  pointer-events:none;
+}
+@keyframes particles{
+  from{background-position:0 0,0 0,0 0}
+  to{background-position:500px 800px,-400px 600px,300px -700px}
 }
 
 /* ================= HEADINGS ================= */
-h1,h2,h3{
-  margin-bottom:15px;
-  background:linear-gradient(90deg,#00ffcc,#a855f7,#00ffcc);
+h2{
+  font-size:2.5rem;
+  margin-bottom:30px;
+  padding-left:20px;
+  border-left:7px solid var(--c1);
+  background:linear-gradient(90deg,var(--c1),var(--c4),var(--c5));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  text-shadow:0 0 25px rgba(0,255,204,.4);
-}
-
-h1{
-  font-size:3rem;
-}
-h2{
-  font-size:2.2rem;
-  border-left:4px solid #00ffcc;
-  padding-left:15px;
 }
 h3{
-  font-size:1.5rem;
+  margin-top:35px;
+  font-size:1.7rem;
+  color:var(--c8);
 }
 
 /* ================= PARAGRAPHS ================= */
 p{
-  margin:15px 0;
-  color:#d9fff7;
-  font-size:1.05rem;
+  margin:24px 0;
+  padding:26px 32px;
+  border-radius:24px;
+  background:
+    linear-gradient(145deg,rgba(0,0,0,.7),rgba(20,30,60,.9));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.06),
+    0 0 35px rgba(0,255,225,.25);
   position:relative;
-  padding-left:15px;
 }
-
 p::before{
   content:"";
   position:absolute;
-  left:0;
-  top:0;
-  height:100%;
-  width:3px;
-  background:linear-gradient(180deg,#00ffcc,#a855f7,#00ffcc);
-  border-radius:5px;
-}
-
-/* ================= LISTS – CARDS ================= */
-ul{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  margin-top:25px;
-}
-
-ul li{
-  list-style:none;
-  padding:20px;
-  border-radius:20px;
-  background:
-    linear-gradient(#000,#000) padding-box,
-    linear-gradient(135deg,#00ffcc,#ff0080,#00aaff) border-box;
-  border:1px solid transparent;
-  transition:.4s;
-}
-
-ul li:hover{
-  transform:translateY(-8px) scale(1.03);
-  box-shadow:
-    0 0 30px rgba(0,255,204,.6),
-    0 0 60px rgba(168,85,247,.4);
-}
-
-/* ================= LINKS ================= */
-a{
-  color:#00ffcc;
-  text-decoration:none;
-  position:relative;
-}
-
-a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:0;
-  height:2px;
-  background:linear-gradient(90deg,#00ffcc,#a855f7);
-  transition:.3s;
-}
-
-a:hover::after{
-  width:100%;
-}
-
-/* ================= IMAGES ================= */
-img{
-  max-width:100%;
-  border-radius:22px;
-  margin:25px 0;
-  border:2px solid transparent;
-  background:
-    linear-gradient(#000,#000) padding-box,
-    linear-gradient(45deg,#00ffcc,#ff0080,#00aaff) border-box;
-  box-shadow:0 0 40px rgba(0,255,204,.4);
-}
-
-/* ================= NAVBAR ================= */
-.navbar{
-  background:rgba(0,0,0,.9);
-  border-bottom:2px solid transparent;
-  background:
-    linear-gradient(#000,#000) padding-box,
-    linear-gradient(90deg,#00ffcc,#a855f7,#00ffcc) border-box;
-}
-
-/* ================= BUTTONS ================= */
-button{
-  padding:12px 26px;
-  border-radius:16px;
-  font-size:1rem;
-  cursor:pointer;
-  border:2px solid transparent;
-  background:
-    linear-gradient(#00ffcc,#00ffcc) padding-box,
-    linear-gradient(120deg,#00ffcc,#ff0080,#00aaff) border-box;
-  color:#000;
-  transition:.3s;
-}
-
-button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 30px rgba(0,255,204,.8);
-}
-
-/* ================= HIGHLIGHT BOX ================= */
-.highlight{
-  margin:20px 0;
-  padding:20px;
-  border-radius:18px;
-  border:1px solid transparent;
-  background:
-    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)) padding-box,
-    linear-gradient(90deg,#00ffcc,#a855f7,#00ffcc) border-box;
-  box-shadow:0 0 25px rgba(0,255,204,.3);
-}
-
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:40px 20px;
-  margin-top:60px;
-  border-top:2px solid transparent;
-  background:
-    linear-gradient(#000,#000) padding-box,
-    linear-gradient(90deg,#00ffcc,#a855f7,#00ffcc) border-box;
-}
-/* ================= COLOR SYSTEM ================= */
-:root{
-  --neon-cyan:#00ffe1;
-  --neon-blue:#00aaff;
-  --neon-purple:#a855f7;
-  --neon-pink:#ff2fdc;
-  --neon-orange:#ff9f1c;
-  --neon-green:#39ff14;
-  --dark-bg:#000;
-}
-
-/* ================= SECTION – GOD BORDER ================= */
-section{
-  position:relative;
-  margin:70px 25px;
-  padding:50px;
-  border-radius:35px;
-  background:rgba(5,8,15,.75);
-  backdrop-filter:blur(14px);
-  overflow:hidden;
-}
-
-section::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  border-radius:35px;
-  background:
-    linear-gradient(130deg,
-      var(--neon-cyan),
-      var(--neon-blue),
-      var(--neon-purple),
-      var(--neon-pink),
-      var(--neon-orange),
-      var(--neon-cyan)
-    );
-  animation:borderFlow 7s linear infinite;
-  z-index:-1;
-}
-
-@keyframes borderFlow{
-  0%{filter:hue-rotate(0deg);}
-  100%{filter:hue-rotate(360deg);}
-}
-
-/* ================= HEADINGS – AVATAR TEXT ================= */
-h1,h2,h3{
-  margin-bottom:20px;
-  background:linear-gradient(
-    90deg,
-    var(--neon-cyan),
-    var(--neon-purple),
-    var(--neon-pink),
-    var(--neon-cyan)
-  );
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:
-    0 0 25px rgba(0,255,225,.5),
-    0 0 60px rgba(168,85,247,.4);
-}
-
-h2{
-  padding-left:18px;
-  border-left:5px solid var(--neon-cyan);
-}
-
-/* ================= PARAGRAPH – PREMIUM CARDS ================= */
-p{
-  position:relative;
-  margin:22px 0;
-  padding:22px 28px;
-  border-radius:20px;
-  font-size:1.05rem;
-  color:#eafffb;
-  background:
-    linear-gradient(180deg,rgba(0,0,0,.6),rgba(10,15,25,.9));
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.05),
-    0 0 20px rgba(0,255,225,.25);
-}
-
-/* paragraph neon side bar */
-p::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:10%;
-  width:5px;
-  height:80%;
+  left:0;top:10%;
+  width:6px;height:80%;
   border-radius:10px;
-  background:linear-gradient(
-    180deg,
-    var(--neon-cyan),
-    var(--neon-purple),
-    var(--neon-pink)
-  );
-  box-shadow:0 0 20px var(--neon-cyan);
+  background:linear-gradient(180deg,var(--c1),var(--c4),var(--c5),var(--c6));
+}
+p strong{
+  color:var(--c6);
+  text-shadow:0 0 10px rgba(255,159,28,.8);
 }
 
-/* ================= IMPORTANT TEXT AUTO-GLOW ================= */
-p strong,
-li strong{
-  color:var(--neon-orange);
-  text-shadow:0 0 12px rgba(255,159,28,.8);
-}
-
-/* ================= LIST ITEMS – HOLOGRAM PANELS ================= */
+/* ================= LISTS ================= */
 ul{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
   margin-top:30px;
 }
-
 ul li{
   list-style:none;
-  padding:25px;
-  border-radius:22px;
-  color:#f2fffc;
-  background:
-    linear-gradient(145deg,rgba(5,10,20,.9),rgba(0,0,0,.9));
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(145deg,rgba(5,10,25,.9),rgba(0,0,0,.95));
   position:relative;
-  overflow:hidden;
+  transition:.4s;
 }
-
 ul li::before{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:22px;
+  border-radius:26px;
   padding:2px;
-  background:linear-gradient(
-    120deg,
-    var(--neon-green),
-    var(--neon-cyan),
-    var(--neon-purple),
-    var(--neon-pink)
-  );
+  background:
+    linear-gradient(120deg,var(--c7),var(--c1),var(--c4),var(--c5),var(--c2));
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;
           mask-composite:exclude;
 }
-
 ul li:hover{
-  transform:translateY(-10px) scale(1.04);
+  transform:translateY(-12px) scale(1.05);
   box-shadow:
-    0 0 35px rgba(0,255,225,.7),
-    0 0 70px rgba(255,47,220,.4);
+    0 0 45px rgba(0,255,225,.7),
+    0 0 90px rgba(168,85,247,.5);
 }
 
-/* ================= HIGHLIGHT BOX – HERO INFO ================= */
-.highlight{
-  padding:28px;
-  border-radius:25px;
-  background:
-    radial-gradient(circle at top,
-      rgba(0,255,225,.15),
-      rgba(0,0,0,.85)
-    );
-  border:2px solid transparent;
-  background-clip:padding-box;
-  position:relative;
-}
-
-.highlight::after{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  border-radius:25px;
-  background:linear-gradient(
-    90deg,
-    var(--neon-cyan),
-    var(--neon-purple),
-    var(--neon-orange),
-    var(--neon-cyan)
-  );
-  z-index:-1;
-}
-
-/* ================= IMAGES – AVATAR GLASS ================= */
+/* ================= IMAGES ================= */
 img{
+  width:100%;
   border-radius:30px;
-  margin:35px 0;
-  box-shadow:
-    0 0 35px rgba(0,255,225,.6),
-    0 0 80px rgba(168,85,247,.35);
+  margin-top:30px;
   border:3px solid transparent;
   background:
     linear-gradient(#000,#000) padding-box,
-    linear-gradient(45deg,
-      var(--neon-cyan),
-      var(--neon-pink),
-      var(--neon-blue)
-    ) border-box;
+    linear-gradient(45deg,var(--c1),var(--c5),var(--c2),var(--c7)) border-box;
+  box-shadow:
+    0 0 40px rgba(0,255,225,.7),
+    0 0 120px rgba(255,47,220,.4);
+  transition:.5s;
+}
+img:hover{
+  transform:scale(1.04);
 }
 
-/* ================= LINKS – ENERGY LINE ================= */
+/* ================= LINKS ================= */
 a{
-  color:var(--neon-cyan);
-  font-weight:500;
+  color:var(--c1);
+  text-decoration:none;
+}
+a:hover{
+  color:var(--c6);
+  text-shadow:0 0 12px rgba(255,159,28,.9);
 }
 
-a:hover{
-  color:var(--neon-orange);
-  text-shadow:0 0 12px rgba(255,159,28,.8);
+/* ================= FOOTER ================= */
+footer{
+  border-top:2px solid transparent;
+  background:
+    linear-gradient(#000,#000) padding-box,
+    linear-gradient(90deg,var(--c1),var(--c5),var(--c2)) border-box;
+  text-align:center;
+  font-size:.95rem;
 }
