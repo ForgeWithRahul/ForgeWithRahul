@@ -32,7 +32,7 @@ window.onload = function() {
 };
 </script>
 </head>
-<body>
+<body style="margin:0;font-family:Arial, sans-serif;background:#000;color:#00ffcc;scroll-behavior:smooth;">
 
 <!-- ================= VIDEO INTRO ================= -->
 <div id="videoScreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:black;z-index:999;">
@@ -56,7 +56,7 @@ window.onload = function() {
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar" style="display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#000;color:#00ffcc;position:sticky;top:0;z-index:1000;">
   <div class="logo" style="font-size:22px;font-weight:bold;">☰ ForgeWithRahul</div>
-  <ul style="list-style:none;display:flex;gap:20px;">
+  <ul style="list-style:none;display:flex;gap:20px;flex-wrap:wrap;">
     <li><a href="#home" style="color:#00ffcc;text-decoration:none;">Home</a></li>
     <li><a href="#ai" style="color:#00ffcc;text-decoration:none;">AI</a></li>
     <li><a href="#ml" style="color:#00ffcc;text-decoration:none;">ML</a></li>
@@ -81,157 +81,269 @@ window.onload = function() {
 <!-- ================= WELCOME ================= -->
 <section style="padding:40px 20px;">
 <h2>Welcome to ForgeWithRahul</h2>
-<p>ForgeWithRahul is your ultimate AI & Cyber Security hub. All tutorials, projects, career guidance, examples, notes, videos, and resources — **everything in one place**. No need to go to Google!</p>
+<p>ForgeWithRahul is your ultimate AI & Cyber Security hub. All tutorials, projects, career guidance, examples, notes, videos, and resources — <strong>everything in one place</strong>. No need to go to Google!</p>
 <p class="highlight" style="color:#00ffcc;font-weight:bold;">Structured learning, interactive projects, and real-world insights all in one hub.</p>
 <a href="https://www.google.com/search?q=AI+basics" target="_blank" style="color:#00ffcc;margin-right:10px;">Google AI Basics</a>
 <a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" style="color:#00ffcc;">Intro to AI - YouTube</a>
 </section>
 
+<!-- ================= AVTAAR STYLE ANIMATION ================= -->
+<section style="position:relative;height:400px;background:#000;margin:20px 0;">
+<img src="https://images.unsplash.com/photo-1612831600000-abcdef" alt="AI Animation" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.6;">
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#00ffcc;text-align:center;">
+  <h2 style="font-size:36px;">Interactive AI & Cyber Security Animations</h2>
+  <p>Visualize concepts as you scroll, learn faster, and explore deeper.</p>
+</div>
+</section>
+
 <!-- ================= AI SECTION ================= -->
 <section id="ai" style="padding:40px 20px;background:#111;color:#00ffcc;">
 <h2>Artificial Intelligence (AI)</h2>
-<h3>Definition</h3>
-<p>AI is the field of computer science that creates systems capable of performing tasks that usually require human intelligence, such as learning, reasoning, and problem-solving.</p>
-<h3>Why AI Exists</h3>
-<p>AI automates complex tasks, reduces human error, and allows solutions beyond manual human capability.</p>
-<h3>Examples</h3>
+<p><strong>Definition:</strong> AI is the branch of computer science that creates intelligent systems capable of performing tasks that normally require human intelligence.</p>
+<p><strong>Explanation:</strong> AI automates repetitive tasks, reduces human error, enhances decision-making, and enables solutions for complex problems beyond human capabilities.</p>
+<h3>Types of AI:</h3>
 <ul>
-<li>Search engines & recommendation systems</li>
-<li>Face recognition & smart cameras</li>
-<li>Voice assistants & NLP tools</li>
-<li>Robotics & autonomous systems</li>
-<li>Predictive analytics & self-learning algorithms</li>
+<li>Reactive Machines – respond to inputs, e.g., IBM Deep Blue</li>
+<li>Limited Memory – uses past data, e.g., self-driving cars</li>
+<li>Theory of Mind – understands emotions & intentions (research stage)</li>
+<li>Self-aware AI – AI with consciousness (future concept)</li>
 </ul>
-<h3>Resources</h3>
+<h3>Examples:</h3>
+<ul>
+<li>Chatbots (ChatGPT, Replika)</li>
+<li>Voice Assistants (Siri, Alexa)</li>
+<li>Autonomous vehicles (Tesla AI)</li>
+<li>Image & Face Recognition</li>
+<li>Recommendation Systems (Netflix, Amazon)</li>
+</ul>
+<h3>Resources:</h3>
 <ul>
 <li><a href="https://www.ibm.com/cloud/learn/what-is-artificial-intelligence" target="_blank" style="color:#00ffcc;">IBM AI Learning Hub</a></li>
-<li><a href="https://www.youtube.com/watch?v=2ePf9rue1Ao" target="_blank" style="color:#00ffcc;">AI Crash Course - YouTube</a></li>
 <li><a href="https://www.coursera.org/learn/machine-learning" target="_blank" style="color:#00ffcc;">Coursera AI Courses</a></li>
 <li><a href="https://www.udemy.com/topic/artificial-intelligence/" target="_blank" style="color:#00ffcc;">Udemy AI Courses</a></li>
 <li><a href="https://www.kaggle.com/learn/ai" target="_blank" style="color:#00ffcc;">Kaggle AI Tutorials</a></li>
+<li><a href="https://www.youtube.com/watch?v=2ePf9rue1Ao" target="_blank" style="color:#00ffcc;">AI Crash Course - YouTube</a></li>
 </ul>
 <img src="https://images.unsplash.com/photo-1581093588401-39f09c646ce3" alt="AI Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
-<!-- ================= MACHINE LEARNING ================= -->
-<h2 id="ml">Machine Learning (ML)</h2>
-<p>Machine Learning allows systems to learn from data without explicit programming.</p>
-<h3>Types of ML</h3>
+<!-- ================= ML SECTION ================= -->
+<section id="ml" style="padding:40px 20px;background:#000;color:#00ffcc;">
+<h2>Machine Learning (ML)</h2>
+<p><strong>Definition:</strong> ML is a subset of AI that allows systems to learn patterns from data and improve from experience without explicit programming.</p>
+<p><strong>Explanation:</strong> ML is used in predictions, classification, clustering, recommendation engines, and anomaly detection.</p>
+<h3>Types:</h3>
 <ul>
-<li>Supervised Learning — Learn with labeled data</li>
-<li>Unsupervised Learning — Discover patterns in data</li>
-<li>Reinforcement Learning — Learn through trial and error</li>
+<li>Supervised Learning – labeled data, e.g., spam detection</li>
+<li>Unsupervised Learning – find patterns, e.g., customer segmentation</li>
+<li>Reinforcement Learning – trial & error, e.g., game AI</li>
+<li>Semi-supervised Learning – partially labeled data</li>
 </ul>
-<h3>Resources</h3>
+<h3>Examples:</h3>
+<ul>
+<li>Stock Market Prediction</li>
+<li>Speech Recognition</li>
+<li>Medical Diagnosis Systems</li>
+<li>Fraud Detection in Banks</li>
+<li>Recommendation Systems</li>
+</ul>
+<h3>Resources:</h3>
 <ul>
 <li><a href="https://www.microsoft.com/en-us/ai/machine-learning" target="_blank" style="color:#00ffcc;">Microsoft ML Docs</a></li>
-<li><a href="https://www.youtube.com/watch?v=ukzFI9rgwfU" target="_blank" style="color:#00ffcc;">Machine Learning Tutorial - YouTube</a></li>
 <li><a href="https://www.coursera.org/learn/machine-learning" target="_blank" style="color:#00ffcc;">Coursera ML Courses</a></li>
 <li><a href="https://www.udemy.com/course/machinelearning/" target="_blank" style="color:#00ffcc;">Udemy ML Courses</a></li>
 <li><a href="https://www.kaggle.com/learn/machine-learning" target="_blank" style="color:#00ffcc;">Kaggle ML Tutorials</a></li>
+<li><a href="https://www.youtube.com/watch?v=ukzFI9rgwfU" target="_blank" style="color:#00ffcc;">ML Crash Course - YouTube</a></li>
 </ul>
-<img src="https://images.unsplash.com/photo-1612831669393-f6e3b8bb70f5" alt="ML Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
-
+<img src="https://images.unsplash.com/photo-1612831669393-f6e3b8bb70f5" alt="ML Example" style="max-width:100%;margin-top:20px;border-radius:10px;"> 
 <!-- ================= DEEP LEARNING ================= -->
-<h2 id="dl">Deep Learning (DL)</h2>
-<p>Deep Learning uses neural networks inspired by the human brain. It powers technologies like speech recognition, image processing, and autonomous systems.</p>
-<h3>Resources</h3>
+<section id="dl" style="padding:40px 20px;background:#111;color:#00ffcc;">
+<h2>Deep Learning (DL)</h2>
+<p><strong>Definition:</strong> Deep Learning is a specialized subset of Machine Learning using neural networks with many layers to model complex patterns in data.</p>
+<p><strong>Explanation:</strong> DL powers voice assistants, image recognition, autonomous vehicles, NLP, and advanced AI applications by learning hierarchical features automatically.</p>
+<h3>Types of Deep Learning:</h3>
+<ul>
+<li>Convolutional Neural Networks (CNN) – Image & Video Recognition</li>
+<li>Recurrent Neural Networks (RNN) – Sequence Data, e.g., Text, Speech</li>
+<li>Generative Adversarial Networks (GANs) – AI-generated content</li>
+<li>Transformers – NLP and advanced sequence modeling</li>
+<li>Autoencoders – Data Compression and Denoising</li>
+</ul>
+<h3>Examples:</h3>
+<ul>
+<li>Self-driving car image recognition</li>
+<li>DeepFake videos creation</li>
+<li>Automatic speech-to-text converters</li>
+<li>AI-generated art and music</li>
+<li>Medical image diagnostics</li>
+</ul>
+<h3>Resources:</h3>
 <ul>
 <li><a href="https://www.deeplearning.ai/" target="_blank" style="color:#00ffcc;">DeepLearning.ai</a></li>
-<li><a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" style="color:#00ffcc;">Deep Learning Tutorial - YouTube</a></li>
 <li><a href="https://www.coursera.org/specializations/deep-learning" target="_blank" style="color:#00ffcc;">Coursera DL Courses</a></li>
 <li><a href="https://www.udemy.com/course/deeplearning/" target="_blank" style="color:#00ffcc;">Udemy DL Courses</a></li>
 <li><a href="https://www.kaggle.com/learn/deep-learning" target="_blank" style="color:#00ffcc;">Kaggle DL Tutorials</a></li>
+<li><a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" style="color:#00ffcc;">Deep Learning Crash Course - YouTube</a></li>
 </ul>
-<img src="https://images.unsplash.com/photo-1612831692341-234a9b29f0a2" alt="DL Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
+<img src="https://images.unsplash.com/photo-1612831692341-234a9b29f0a2" alt="Deep Learning Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
 <!-- ================= CYBER SECURITY ================= -->
-<h2 id="cyber">Cyber Security</h2>
-<p>Protect systems, networks, and data from digital attacks.</p>
+<section id="cyber" style="padding:40px 20px;background:#000;color:#00ffcc;">
+<h2>Cyber Security</h2>
+<p><strong>Definition:</strong> Cyber Security is the practice of protecting systems, networks, and data from digital attacks.</p>
+<p><strong>Explanation:</strong> It involves techniques to prevent unauthorized access, data breaches, cyberattacks, and ensures integrity, confidentiality, and availability of digital information.</p>
+<h3>Types of Cyber Security:</h3>
+<ul>
+<li>Network Security – Protects network infrastructure</li>
+<li>Information Security – Protects data from unauthorized access</li>
+<li>Application Security – Secures applications from threats</li>
+<li>Endpoint Security – Protects devices like computers, mobiles</li>
+<li>Cloud Security – Security in cloud-based systems</li>
+<li>Operational Security – Policies and procedures to protect assets</li>
+</ul>
+<h3>Common Cyber Attacks:</h3>
 <ul>
 <li>Phishing attacks</li>
 <li>Malware & Ransomware</li>
 <li>Man-in-the-Middle attacks</li>
-<li>DDoS & Password attacks</li>
-<li>SQL Injection</li>
-<li>Zero-day attacks</li>
+<li>DDoS attacks</li>
+<li>SQL Injection & XSS attacks</li>
+<li>Zero-day exploits</li>
 </ul>
-<h3>Tools</h3>
+<h3>Tools:</h3>
 <ul>
-<li>Wireshark</li>
-<li>Nmap</li>
-<li>Metasploit</li>
-<li>Burp Suite</li>
-<li>John the Ripper</li>
-<li>Kali Linux</li>
-<li>Snort</li>
-<li>Aircrack-ng</li>
+<li>Wireshark – Network traffic analyzer</li>
+<li>Nmap – Network scanning & discovery</li>
+<li>Metasploit – Exploitation framework</li>
+<li>Burp Suite – Web vulnerability scanner</li>
+<li>John the Ripper – Password cracker</li>
+<li>Kali Linux – Penetration testing OS</li>
+<li>Snort – Intrusion detection system</li>
+<li>Aircrack-ng – Wireless security tool</li>
 </ul>
-<h3>Resources</h3>
+<h3>Resources:</h3>
 <ul>
 <li><a href="https://www.cisa.gov/cybersecurity" target="_blank" style="color:#00ffcc;">CISA Cybersecurity Resources</a></li>
-<li><a href="https://www.youtube.com/watch?v=3HjBL-0JdJg" target="_blank" style="color:#00ffcc;">Cyber Security Full Course - YouTube</a></li>
 <li><a href="https://www.udemy.com/course/learn-cyber-security/" target="_blank" style="color:#00ffcc;">Udemy Cyber Security</a></li>
 <li><a href="https://www.coursera.org/specializations/cyber-security" target="_blank" style="color:#00ffcc;">Coursera Cyber Security</a></li>
 <li><a href="https://www.kaggle.com/learn/cyber-security" target="_blank" style="color:#00ffcc;">Kaggle Cyber Tutorials</a></li>
+<li><a href="https://www.youtube.com/watch?v=3HjBL-0JdJg" target="_blank" style="color:#00ffcc;">Cyber Security Full Course - YouTube</a></li>
 </ul>
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Cyber Security" style="max-width:100%;margin-top:20px;border-radius:10px;">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Cyber Security Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
 <!-- ================= ETHICAL HACKING ================= -->
-<h2 id="ethical">Ethical Hacking</h2>
-<p>Identify system vulnerabilities legally to strengthen security.</p>
+<section id="ethical" style="padding:40px 20px;background:#111;color:#00ffcc;">
+<h2>Ethical Hacking</h2>
+<p><strong>Definition:</strong> Ethical Hacking is legally probing systems for vulnerabilities to improve security.</p>
+<p><strong>Explanation:</strong> White-hat hackers identify weaknesses, fix security flaws, and participate in bug bounty programs and CTF competitions.</p>
+<h3>Areas in Ethical Hacking:</h3>
 <ul>
 <li>Networking fundamentals</li>
 <li>Operating systems & web security</li>
-<li>Cryptography & encryption</li>
+<li>Cryptography & encryption techniques</li>
 <li>Penetration testing & hacking tools</li>
+<li>CTFs & Capture the Flag challenges</li>
 <li>Bug bounty programs</li>
-<li>CTFs</li>
 </ul>
-<h3>Resources</h3>
+<h3>Examples:</h3>
+<ul>
+<li>Performing penetration testing on corporate websites</li>
+<li>Simulating phishing attacks for awareness training</li>
+<li>Testing mobile app security</li>
+<li>Identifying SQL injections and XSS vulnerabilities</li>
+<li>Securing IoT devices</li>
+</ul>
+<h3>Resources:</h3>
 <ul>
 <li><a href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/" target="_blank" style="color:#00ffcc;">CEH Certification</a></li>
-<li><a href="https://www.youtube.com/watch?v=1NRh6h8s6wM" target="_blank" style="color:#00ffcc;">Ethical Hacking Tutorial - YouTube</a></li>
 <li><a href="https://www.udemy.com/course/learn-ethical-hacking/" target="_blank" style="color:#00ffcc;">Udemy Ethical Hacking</a></li>
 <li><a href="https://www.coursera.org/learn/ethical-hacking" target="_blank" style="color:#00ffcc;">Coursera Ethical Hacking</a></li>
 <li><a href="https://www.kaggle.com/learn/ethical-hacking" target="_blank" style="color:#00ffcc;">Kaggle Hacking Tutorials</a></li>
+<li><a href="https://www.youtube.com/watch?v=1NRh6h8s6wM" target="_blank" style="color:#00ffcc;">Ethical Hacking Tutorial - YouTube</a></li>
 </ul>
-<img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f" alt="Ethical Hacking" style="max-width:100%;margin-top:20px;border-radius:10px;">
+<img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f" alt="Ethical Hacking Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
+<!-- ================= PROGRAMMING ================= -->
+<section id="prog" style="padding:40px 20px;background:#000;color:#00ffcc;">
+<h2>Programming & Development</h2>
+<p><strong>Definition:</strong> Programming is the process of writing instructions for computers to perform specific tasks.</p>
+<p><strong>Explanation:</strong> Programming is the backbone of all AI, Cyber Security, and software development. Mastering programming languages is essential for automation, AI model building, security scripting, and software projects.</p>
+<h3>Popular Programming Languages:</h3>
+<ul>
+<li><strong>Python:</strong> AI, ML, Data Science, Automation</li>
+<li><strong>JavaScript:</strong> Web Development, Frontend, Backend</li>
+<li><strong>C / C++:</strong> System programming, Game development</li>
+<li><strong>Java:</strong> Enterprise apps, Android development</li>
+<li><strong>SQL:</strong> Database management & queries</li>
+<li><strong>Bash / Shell:</strong> Cyber Security scripting</li>
+</ul>
+<h3>Examples:</h3>
+<ul>
+<li>Python script for chatbot</li>
+<li>JavaScript for interactive websites</li>
+<li>C++ program for encryption algorithms</li>
+<li>SQL queries for database analysis</li>
+<li>Bash scripts to automate network scanning</li>
+</ul>
+<h3>Resources:</h3>
+<ul>
+<li><a href="https://www.w3schools.com/" target="_blank" style="color:#00ffcc;">W3Schools Tutorials</a></li>
+<li><a href="https://www.coursera.org/browse/computer-science" target="_blank" style="color:#00ffcc;">Coursera CS Courses</a></li>
+<li><a href="https://www.udemy.com/courses/development/" target="_blank" style="color:#00ffcc;">Udemy Programming Courses</a></li>
+<li><a href="https://www.kaggle.com/learn/python" target="_blank" style="color:#00ffcc;">Kaggle Python Tutorials</a></li>
+<li><a href="https://www.youtube.com/results?search_query=programming+tutorials" target="_blank" style="color:#00ffcc;">Programming Tutorials - YouTube</a></li>
+</ul>
+<img src="https://images.unsplash.com/photo-1559526324-593bc073d938" alt="Programming Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
 <!-- ================= PROJECTS ================= -->
-<section id="projects" style="padding:40px 20px;">
-<h2>Project Ideas</h2>
+<section id="projects" style="padding:40px 20px;background:#111;color:#00ffcc;">
+<h2>Project Ideas & Examples</h2>
+<p><strong>Explanation:</strong> Practical projects help reinforce learning. AI, Cyber Security, and Programming projects develop real-world skills and are crucial for portfolio building.</p>
+<h3>AI & ML Projects:</h3>
 <ul>
-<li>AI Chatbot with Python</li>
-<li>Spam Detection System</li>
-<li>Password Strength Checker</li>
-<li>Network Traffic Analyzer</li>
-<li>Vulnerability Scanner</li>
-<li>Face Recognition System</li>
-<li>ML-based Stock Prediction</li>
-<li>IoT Security Project</li>
-<li>Deep Learning Image Classifier</li>
-<li>CTF Simulation Platform</li>
+<li>Chatbot with NLP</li>
+<li>Stock price prediction using ML</li>
+<li>Image classifier using CNN</li>
+<li>AI-based recommendation system</li>
+<li>Deepfake detection tool</li>
 </ul>
-<h3>Resources</h3>
+<h3>Cyber Security Projects:</h3>
 <ul>
-<li><a href="https://www.youtube.com/results?search_query=ai+projects" target="_blank" style="color:#00ffcc;">AI Project Tutorials - YouTube</a></li>
-<li><a href="https://github.com/topics/machine-learning-projects" target="_blank" style="color:#00ffcc;">ML GitHub Projects</a></li>
+<li>Vulnerability scanner</li>
+<li>Network traffic analyzer</li>
+<li>Secure password generator & checker</li>
+<li>CTF simulation platform</li>
+<li>IoT security monitoring system</li>
+</ul>
+<h3>Programming Projects:</h3>
+<ul>
+<li>Portfolio website with HTML/CSS/JS</li>
+<li>Automation scripts using Python</li>
+<li>Database management system in SQL</li>
+<li>Encryption & decryption tool in C++</li>
+<li>Mini-game development using JavaScript</li>
+</ul>
+<h3>Resources:</h3>
+<ul>
+<li><a href="https://www.youtube.com/results?search_query=ai+projects" target="_blank" style="color:#00ffcc;">AI Projects Tutorials - YouTube</a></li>
+<li><a href="https://github.com/topics/machine-learning-projects" target="_blank" style="color:#00ffcc;">GitHub ML Projects</a></li>
 <li><a href="https://www.kaggle.com/code" target="_blank" style="color:#00ffcc;">Kaggle Projects</a></li>
-<li><a href="https://www.coursera.org/projects?query=ai" target="_blank" style="color:#00ffcc;">Coursera Projects</a></li>
+<li><a href="https://www.coursera.org/projects" target="_blank" style="color:#00ffcc;">Coursera Projects</a></li>
+<li><a href="https://www.udemy.com/courses/development/" target="_blank" style="color:#00ffcc;">Udemy Development Projects</a></li>
 </ul>
 </section>
 
 <!-- ================= RESOURCES ================= -->
-<section id="resources" style="padding:40px 20px;background:#111;color:#00ffcc;">
-<h2>Learning Resources</h2>
+<section id="resources" style="padding:40px 20px;background:#000;color:#00ffcc;">
+<h2>All-in-One Learning Resources</h2>
 <h3>Official Documentation</h3>
 <ul>
 <li><a href="https://www.google.com/intl/en_in/ai/" target="_blank" style="color:#00ffcc;">Google AI</a></li>
 <li><a href="https://www.ibm.com/cloud/learn/ai" target="_blank" style="color:#00ffcc;">IBM AI Hub</a></li>
 <li><a href="https://www.microsoft.com/en-us/ai" target="_blank" style="color:#00ffcc;">Microsoft Learn</a></li>
 <li><a href="https://ocw.mit.edu/courses/ai/" target="_blank" style="color:#00ffcc;">MIT OpenCourseWare</a></li>
+<li><a href="https://www.coursera.org/" target="_blank" style="color:#00ffcc;">Coursera Platform</a></li>
+<li><a href="https://www.udemy.com/" target="_blank" style="color:#00ffcc;">Udemy Platform</a></li>
+<li><a href="https://www.kaggle.com/" target="_blank" style="color:#00ffcc;">Kaggle Platform</a></li>
 </ul>
-
 <h3>YouTube Channels</h3>
 <ul>
 <li>freeCodeCamp</li>
@@ -239,12 +351,70 @@ window.onload = function() {
 <li>NetworkChuck</li>
 <li>Google Developers</li>
 <li>MIT OpenCourseWare</li>
+<li>Traversy Media</li>
+<li>Tech With Tim</li>
+<li>Corey Schafer</li>
 </ul>
 </section>
 
 <!-- ================= CAREER ================= -->
-<section id="career" style="padding:40px 20px;">
+<section id="career" style="padding:40px 20px;background:#111;color:#00ffcc;">
 <h2>Career Opportunities</h2>
+<p><strong>Explanation:</strong> AI, Cyber Security, and Programming skills open doors to high-paying and future-proof careers. Knowledge + Projects + Certifications = Strong Portfolio.</p>
 <ul>
 <li>AI Engineer</li>
-<li>Data
+<li>Data Scientist</li>
+<li>Machine Learning Engineer</li>
+<li>Cyber Security Analyst</li>
+<li>Ethical Hacker / Penetration Tester</li>
+<li>Security Architect</li>
+<li>Research Scientist</li>
+<li>Full Stack Developer</li>
+<li>DevOps Engineer</li>
+<li>Software Engineer</li>
+</ul>
+<h3>Resources:</h3>
+<ul>
+<li><a href="https://www.linkedin.com/learning/" target="_blank" style="color:#00ffcc;">LinkedIn Learning</a></li>
+<li><a href="https://www.glassdoor.com/index.htm" target="_blank" style="color:#00ffcc;">Glassdoor – Jobs & Salaries</a></li>
+<li><a href="https://www.indeed.com/" target="_blank" style="color:#00ffcc;">Indeed Jobs</a></li>
+<li><a href="https://www.coursera.org/career-academy" target="_blank" style="color:#00ffcc;">Coursera Career Resources</a></li>
+<li><a href="https://www.udemy.com/" target="_blank" style="color:#00ffcc;">Udemy Career Courses</a></li>
+</ul>
+</section>
+
+<!-- ================= HELP & SUPPORT ================= -->
+<section id="help" style="padding:40px 20px;background:#000;color:#00ffcc;">
+<h2>Help & Support</h2>
+<p><strong>Explanation:</strong> Step-by-step guidance for beginners and professionals. Tutorials, examples, notes, and projects are structured for easy learning.</p>
+<ul>
+<li>Contact & Support via Email</li>
+<li>Step-by-step video guides</li>
+<li>Project walkthroughs</li>
+<li>Career guidance & mentorship</li>
+<li>Interactive Q&A sections</li>
+<li>Community & forums</li>
+</ul>
+</section>
+
+<!-- ================= FUTURE ================= -->
+<section id="future" style="padding:40px 20px;background:#111;color:#00ffcc;">
+<h2>Future of AI & Cyber Security</h2>
+<p><strong>Explanation:</strong> AI & Cyber Security are shaping the next decade. Industries like finance, healthcare, defense, and tech will rely heavily on these skills. Professionals in these fields will be in high demand.</p>
+<ul>
+<li>AI-driven automation will replace repetitive jobs</li>
+<li>Cyber Security will be essential for global digital safety</li>
+<li>ML & DL will power autonomous vehicles, robotics, and smart systems</li>
+<li>Ethical hackers will secure AI systems & networks</li>
+<li>Continuous learning & certifications are key for career growth</li>
+</ul>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer style="padding:20px;text-align:center;background:#000;color:#00ffcc;">
+<p>© 2026 ForgeWithRahul | All-in-One AI & Cyber Security Hub | Created by Rahul Singh</p>
+</footer>
+
+</div> <!-- End mainContent -->
+</body>
+</html>
