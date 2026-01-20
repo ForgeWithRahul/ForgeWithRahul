@@ -9,26 +9,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <script>
-// Simple JS for intro animation and login flow
+// JS: Video intro + login
 window.onload = function() {
     const videoScreen = document.getElementById('videoScreen');
     const loginScreen = document.getElementById('loginScreen');
     const mainContent = document.getElementById('mainContent');
 
-    // Show video intro first
     setTimeout(() => {
         videoScreen.style.display = 'none';
         loginScreen.style.display = 'flex';
-    }, 5000); // 5 seconds intro video
+    }, 5000); // 5 sec intro
 
-    // Handle login submit
     document.getElementById('loginBtn').onclick = function() {
         const username = document.getElementById('username').value;
         if(username.trim() !== '') {
             loginScreen.style.display = 'none';
             mainContent.style.display = 'block';
         } else {
-            alert('Please enter a valid username/email/phone');
+            alert('Enter a valid username/email/phone');
         }
     };
 };
@@ -37,66 +35,65 @@ window.onload = function() {
 <body>
 
 <!-- ================= VIDEO INTRO ================= -->
-<div id="videoScreen">
-  <video autoplay muted>
+<div id="videoScreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:black;z-index:999;">
+  <video autoplay muted style="width:100%;height:100%;object-fit:cover;">
     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
   </video>
-  <button id="skipBtn" onclick="document.getElementById('videoScreen').style.display='none'; document.getElementById('loginScreen').style.display='flex';">Skip Intro</button>
+  <button id="skipBtn" onclick="document.getElementById('videoScreen').style.display='none'; document.getElementById('loginScreen').style.display='flex';"
+    style="position:absolute;top:20px;right:20px;padding:10px 20px;background:#00ffcc;border:none;cursor:pointer;font-weight:bold;">Skip Intro</button>
 </div>
 
 <!-- ================= LOGIN SCREEN ================= -->
-<div id="loginScreen" style="display:none; flex-direction:column; justify-content:center; align-items:center; height:100vh; background:black; color:#00ffcc;">
+<div id="loginScreen" style="display:none;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:black;color:#00ffcc;">
   <h1>Welcome to ForgeWithRahul</h1>
-  <input type="text" id="username" placeholder="Enter Username / Email / Phone">
-  <button id="loginBtn">Proceed</button>
+  <input type="text" id="username" placeholder="Enter Username / Email / Phone" style="padding:10px;margin:10px;width:250px;font-size:16px;">
+  <button id="loginBtn" style="padding:10px 20px;font-size:16px;cursor:pointer;background:#00ffcc;color:black;border:none;">Proceed</button>
 </div>
 
 <!-- ================= MAIN CONTENT ================= -->
 <div id="mainContent" style="display:none;">
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-  <div class="logo">☰ ForgeWithRahul</div>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#notification">Notification</a></li>
-    <li><a href="#resources">Resources</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#career">Career</a></li>
-    <li><a href="#help">Help</a></li>
+<nav class="navbar" style="display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#000;color:#00ffcc;position:sticky;top:0;z-index:1000;">
+  <div class="logo" style="font-size:22px;font-weight:bold;">☰ ForgeWithRahul</div>
+  <ul style="list-style:none;display:flex;gap:20px;">
+    <li><a href="#home" style="color:#00ffcc;text-decoration:none;">Home</a></li>
+    <li><a href="#ai" style="color:#00ffcc;text-decoration:none;">AI</a></li>
+    <li><a href="#ml" style="color:#00ffcc;text-decoration:none;">ML</a></li>
+    <li><a href="#dl" style="color:#00ffcc;text-decoration:none;">DL</a></li>
+    <li><a href="#cyber" style="color:#00ffcc;text-decoration:none;">Cyber Security</a></li>
+    <li><a href="#ethical" style="color:#00ffcc;text-decoration:none;">Ethical Hacking</a></li>
+    <li><a href="#prog" style="color:#00ffcc;text-decoration:none;">Programming</a></li>
+    <li><a href="#projects" style="color:#00ffcc;text-decoration:none;">Projects</a></li>
+    <li><a href="#resources" style="color:#00ffcc;text-decoration:none;">Resources</a></li>
+    <li><a href="#career" style="color:#00ffcc;text-decoration:none;">Career</a></li>
+    <li><a href="#help" style="color:#00ffcc;text-decoration:none;">Help</a></li>
   </ul>
 </nav>
 
 <!-- ================= HERO ================= -->
-<header id="home">
-  <h1>ForgeWithRahul</h1>
-  <p class="tagline">Learn AI • Cyber Security • Ethical Hacking • Future Tech</p>
-  <img src="https://images.unsplash.com/photo-1581092795366-7b5b7c6a56f1" alt="AI Banner" class="hero-img">
+<header id="home" style="text-align:center;padding:50px 20px;background:url('https://images.unsplash.com/photo-1581092795366-7b5b7c6a56f1') center/cover no-repeat;color:#00ffcc;">
+  <h1 style="font-size:48px;font-weight:bold;text-shadow:2px 2px 10px black;">ForgeWithRahul</h1>
+  <p class="tagline" style="font-size:24px;">Learn AI • Cyber Security • Ethical Hacking • Future Tech</p>
+  <img src="https://images.unsplash.com/photo-1581092795366-7b5b7c6a56f1" alt="AI Banner" style="max-width:90%;margin-top:20px;border-radius:10px;box-shadow:0 0 20px #00ffcc;">
 </header>
 
-<!-- ================= INTRO ================= -->
-<section>
+<!-- ================= WELCOME ================= -->
+<section style="padding:40px 20px;">
 <h2>Welcome to ForgeWithRahul</h2>
-<p>ForgeWithRahul is a complete AI & Cyber Security learning platform for beginners and professionals. Everything you need to learn AI, ML, Deep Learning, Cyber Security, Ethical Hacking, tools, projects, career guidance, and more — all in one place.</p>
-<p class="highlight">Structured learning, interactive projects, and career insights all in one hub.</p>
-<a href="https://www.google.com/search?q=AI+basics" target="_blank">Google AI Basics</a> | 
-<a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank">Intro to AI - YouTube</a>
+<p>ForgeWithRahul is your ultimate AI & Cyber Security hub. All tutorials, projects, career guidance, examples, notes, videos, and resources — **everything in one place**. No need to go to Google!</p>
+<p class="highlight" style="color:#00ffcc;font-weight:bold;">Structured learning, interactive projects, and real-world insights all in one hub.</p>
+<a href="https://www.google.com/search?q=AI+basics" target="_blank" style="color:#00ffcc;margin-right:10px;">Google AI Basics</a>
+<a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" style="color:#00ffcc;">Intro to AI - YouTube</a>
 </section>
 
-<!-- ================= ABOUT CREATOR ================= -->
-<section>
-<h2>About the Creator</h2>
-<p>This platform is created by Rahul Singh with a strong belief that advanced technology should be accessible to everyone. Clarity, depth, and real-world relevance are the core principles.</p>
-<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="About Rahul">
-</section>
-
-<!-- ================= ARTIFICIAL INTELLIGENCE ================= -->
-<section>
+<!-- ================= AI SECTION ================= -->
+<section id="ai" style="padding:40px 20px;background:#111;color:#00ffcc;">
 <h2>Artificial Intelligence (AI)</h2>
 <h3>Definition</h3>
 <p>AI is the field of computer science that creates systems capable of performing tasks that usually require human intelligence, such as learning, reasoning, and problem-solving.</p>
 <h3>Why AI Exists</h3>
-<p>AI automates complex tasks, reduces human error, and allows solutions to problems beyond human manual capabilities.</p>
+<p>AI automates complex tasks, reduces human error, and allows solutions beyond manual human capability.</p>
 <h3>Examples</h3>
 <ul>
 <li>Search engines & recommendation systems</li>
@@ -105,12 +102,18 @@ window.onload = function() {
 <li>Robotics & autonomous systems</li>
 <li>Predictive analytics & self-learning algorithms</li>
 </ul>
-<a href="https://www.ibm.com/cloud/learn/what-is-artificial-intelligence" target="_blank">IBM AI Learning Hub</a> | 
-<a href="https://www.youtube.com/watch?v=2ePf9rue1Ao" target="_blank">AI Crash Course - YouTube</a>
-<img src="https://images.unsplash.com/photo-1581093588401-39f09c646ce3" alt="AI Example">
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.ibm.com/cloud/learn/what-is-artificial-intelligence" target="_blank" style="color:#00ffcc;">IBM AI Learning Hub</a></li>
+<li><a href="https://www.youtube.com/watch?v=2ePf9rue1Ao" target="_blank" style="color:#00ffcc;">AI Crash Course - YouTube</a></li>
+<li><a href="https://www.coursera.org/learn/machine-learning" target="_blank" style="color:#00ffcc;">Coursera AI Courses</a></li>
+<li><a href="https://www.udemy.com/topic/artificial-intelligence/" target="_blank" style="color:#00ffcc;">Udemy AI Courses</a></li>
+<li><a href="https://www.kaggle.com/learn/ai" target="_blank" style="color:#00ffcc;">Kaggle AI Tutorials</a></li>
+</ul>
+<img src="https://images.unsplash.com/photo-1581093588401-39f09c646ce3" alt="AI Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
 <!-- ================= MACHINE LEARNING ================= -->
-<h2>Machine Learning (ML)</h2>
+<h2 id="ml">Machine Learning (ML)</h2>
 <p>Machine Learning allows systems to learn from data without explicit programming.</p>
 <h3>Types of ML</h3>
 <ul>
@@ -118,109 +121,117 @@ window.onload = function() {
 <li>Unsupervised Learning — Discover patterns in data</li>
 <li>Reinforcement Learning — Learn through trial and error</li>
 </ul>
-<a href="https://www.microsoft.com/en-us/ai/machine-learning" target="_blank">Microsoft ML Docs</a> | 
-<a href="https://www.youtube.com/watch?v=ukzFI9rgwfU" target="_blank">Machine Learning Tutorial - YouTube</a>
-<img src="https://images.unsplash.com/photo-1612831669393-f6e3b8bb70f5" alt="Machine Learning">
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/ai/machine-learning" target="_blank" style="color:#00ffcc;">Microsoft ML Docs</a></li>
+<li><a href="https://www.youtube.com/watch?v=ukzFI9rgwfU" target="_blank" style="color:#00ffcc;">Machine Learning Tutorial - YouTube</a></li>
+<li><a href="https://www.coursera.org/learn/machine-learning" target="_blank" style="color:#00ffcc;">Coursera ML Courses</a></li>
+<li><a href="https://www.udemy.com/course/machinelearning/" target="_blank" style="color:#00ffcc;">Udemy ML Courses</a></li>
+<li><a href="https://www.kaggle.com/learn/machine-learning" target="_blank" style="color:#00ffcc;">Kaggle ML Tutorials</a></li>
+</ul>
+<img src="https://images.unsplash.com/photo-1612831669393-f6e3b8bb70f5" alt="ML Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
 <!-- ================= DEEP LEARNING ================= -->
-<h2>Deep Learning</h2>
+<h2 id="dl">Deep Learning (DL)</h2>
 <p>Deep Learning uses neural networks inspired by the human brain. It powers technologies like speech recognition, image processing, and autonomous systems.</p>
-<a href="https://www.deeplearning.ai/" target="_blank">DeepLearning.ai</a> | 
-<a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank">Deep Learning Tutorial - YouTube</a>
-<img src="https://images.unsplash.com/photo-1612831692341-234a9b29f0a2" alt="Deep Learning AI">
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.deeplearning.ai/" target="_blank" style="color:#00ffcc;">DeepLearning.ai</a></li>
+<li><a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" style="color:#00ffcc;">Deep Learning Tutorial - YouTube</a></li>
+<li><a href="https://www.coursera.org/specializations/deep-learning" target="_blank" style="color:#00ffcc;">Coursera DL Courses</a></li>
+<li><a href="https://www.udemy.com/course/deeplearning/" target="_blank" style="color:#00ffcc;">Udemy DL Courses</a></li>
+<li><a href="https://www.kaggle.com/learn/deep-learning" target="_blank" style="color:#00ffcc;">Kaggle DL Tutorials</a></li>
+</ul>
+<img src="https://images.unsplash.com/photo-1612831692341-234a9b29f0a2" alt="DL Example" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
 <!-- ================= CYBER SECURITY ================= -->
-<h2>Cyber Security</h2>
-<p>Cyber Security protects systems, networks, and data from digital attacks.</p>
+<h2 id="cyber">Cyber Security</h2>
+<p>Protect systems, networks, and data from digital attacks.</p>
 <ul>
 <li>Phishing attacks</li>
 <li>Malware & Ransomware</li>
 <li>Man-in-the-Middle attacks</li>
 <li>DDoS & Password attacks</li>
+<li>SQL Injection</li>
+<li>Zero-day attacks</li>
 </ul>
-<a href="https://www.cisa.gov/cybersecurity" target="_blank">CISA Cybersecurity Resources</a> | 
-<a href="https://www.youtube.com/watch?v=3HjBL-0JdJg" target="_blank">Cyber Security Full Course - YouTube</a>
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Cyber Security">
-
-<!-- ================= ETHICAL HACKING ================= -->
-<h2>Ethical Hacking</h2>
-<p>Ethical hacking identifies vulnerabilities legally to strengthen system security.</p>
-<ul>
-<li>Networking fundamentals</li>
-<li>Operating systems & web security</li>
-<li>Cryptography & encryption</li>
-<li>Security tools & penetration testing</li>
-</ul>
-<a href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/" target="_blank">CEH Certification</a> | 
-<a href="https://www.youtube.com/watch?v=1NRh6h8s6wM" target="_blank">Ethical Hacking Tutorial - YouTube</a>
-<img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f" alt="Ethical Hacking">
-
-<!-- ================= EXTRA IMAGES & ANIMATED PLACEHOLDERS ================= -->
-<section>
-<h2>Featured AI & Hacking Animations</h2>
-<img src="https://images.unsplash.com/photo-1612831600000-abcdef" alt="AI Animation 1" class="animated-img">
-<img src="https://images.unsplash.com/photo-1612831600001-abcdef" alt="Hacking Animation 2" class="animated-img">
-<img src="https://images.unsplash.com/photo-1612831600002-abcdef" alt="Cyber Security Animation 3" class="animated-img">
-<img src="https://images.unsplash.com/photo-1612831600003-abcdef" alt="AI & Hacking Animation 4" class="animated-img">
-</section>
-
-<!-- ================= TOOLS ================= -->
-<section>
-<h2>Popular Tools in Cyber Security</h2>
+<h3>Tools</h3>
 <ul>
 <li>Wireshark</li>
 <li>Nmap</li>
 <li>Metasploit</li>
 <li>Burp Suite</li>
 <li>John the Ripper</li>
+<li>Kali Linux</li>
+<li>Snort</li>
+<li>Aircrack-ng</li>
 </ul>
-<a href="https://www.youtube.com/watch?v=Q9R8CxaRZCw" target="_blank">Cyber Security Tools Tutorial - YouTube</a>
-</section>
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.cisa.gov/cybersecurity" target="_blank" style="color:#00ffcc;">CISA Cybersecurity Resources</a></li>
+<li><a href="https://www.youtube.com/watch?v=3HjBL-0JdJg" target="_blank" style="color:#00ffcc;">Cyber Security Full Course - YouTube</a></li>
+<li><a href="https://www.udemy.com/course/learn-cyber-security/" target="_blank" style="color:#00ffcc;">Udemy Cyber Security</a></li>
+<li><a href="https://www.coursera.org/specializations/cyber-security" target="_blank" style="color:#00ffcc;">Coursera Cyber Security</a></li>
+<li><a href="https://www.kaggle.com/learn/cyber-security" target="_blank" style="color:#00ffcc;">Kaggle Cyber Tutorials</a></li>
+</ul>
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Cyber Security" style="max-width:100%;margin-top:20px;border-radius:10px;">
 
-<!-- ================= PROJECT IDEAS ================= -->
-<section id="projects">
+<!-- ================= ETHICAL HACKING ================= -->
+<h2 id="ethical">Ethical Hacking</h2>
+<p>Identify system vulnerabilities legally to strengthen security.</p>
+<ul>
+<li>Networking fundamentals</li>
+<li>Operating systems & web security</li>
+<li>Cryptography & encryption</li>
+<li>Penetration testing & hacking tools</li>
+<li>Bug bounty programs</li>
+<li>CTFs</li>
+</ul>
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/" target="_blank" style="color:#00ffcc;">CEH Certification</a></li>
+<li><a href="https://www.youtube.com/watch?v=1NRh6h8s6wM" target="_blank" style="color:#00ffcc;">Ethical Hacking Tutorial - YouTube</a></li>
+<li><a href="https://www.udemy.com/course/learn-ethical-hacking/" target="_blank" style="color:#00ffcc;">Udemy Ethical Hacking</a></li>
+<li><a href="https://www.coursera.org/learn/ethical-hacking" target="_blank" style="color:#00ffcc;">Coursera Ethical Hacking</a></li>
+<li><a href="https://www.kaggle.com/learn/ethical-hacking" target="_blank" style="color:#00ffcc;">Kaggle Hacking Tutorials</a></li>
+</ul>
+<img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f" alt="Ethical Hacking" style="max-width:100%;margin-top:20px;border-radius:10px;">
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" style="padding:40px 20px;">
 <h2>Project Ideas</h2>
 <ul>
-<li>AI-based chatbot</li>
-<li>Spam detection system</li>
-<li>Password strength checker</li>
-<li>Network traffic analyzer</li>
-<li>Vulnerability scanner</li>
+<li>AI Chatbot with Python</li>
+<li>Spam Detection System</li>
+<li>Password Strength Checker</li>
+<li>Network Traffic Analyzer</li>
+<li>Vulnerability Scanner</li>
+<li>Face Recognition System</li>
+<li>ML-based Stock Prediction</li>
+<li>IoT Security Project</li>
+<li>Deep Learning Image Classifier</li>
+<li>CTF Simulation Platform</li>
 </ul>
-<a href="https://www.youtube.com/results?search_query=ai+projects" target="_blank">AI Project Tutorials - YouTube</a>
-</section>
-
-<!-- ================= ROADMAP ================= -->
-<section>
-<h2>Complete Learning Roadmap</h2>
-<ol>
-<li>Computer Basics</li>
-<li>Networking Fundamentals</li>
-<li>Programming Basics</li>
-<li>AI & ML Concepts</li>
-<li>Cyber Security Fundamentals</li>
-<li>Ethical Hacking</li>
-<li>Advanced Security</li>
-<li>Projects & Certifications</li>
-</ol>
-</section>
-
-<!-- ================= NOTIFICATIONS ================= -->
-<section id="notification">
-<h2>Notifications</h2>
-<p>🔔 New tutorials, projects, and resources added regularly. Stay connected!</p>
+<h3>Resources</h3>
+<ul>
+<li><a href="https://www.youtube.com/results?search_query=ai+projects" target="_blank" style="color:#00ffcc;">AI Project Tutorials - YouTube</a></li>
+<li><a href="https://github.com/topics/machine-learning-projects" target="_blank" style="color:#00ffcc;">ML GitHub Projects</a></li>
+<li><a href="https://www.kaggle.com/code" target="_blank" style="color:#00ffcc;">Kaggle Projects</a></li>
+<li><a href="https://www.coursera.org/projects?query=ai" target="_blank" style="color:#00ffcc;">Coursera Projects</a></li>
+</ul>
 </section>
 
 <!-- ================= RESOURCES ================= -->
-<section id="resources">
+<section id="resources" style="padding:40px 20px;background:#111;color:#00ffcc;">
 <h2>Learning Resources</h2>
-<h3>Official Docs & Platforms</h3>
+<h3>Official Documentation</h3>
 <ul>
-<li>Google AI documentation</li>
-<li>IBM Skills & AI hub</li>
-<li>Microsoft Learn</li>
-<li>MIT OpenCourseWare</li>
+<li><a href="https://www.google.com/intl/en_in/ai/" target="_blank" style="color:#00ffcc;">Google AI</a></li>
+<li><a href="https://www.ibm.com/cloud/learn/ai" target="_blank" style="color:#00ffcc;">IBM AI Hub</a></li>
+<li><a href="https://www.microsoft.com/en-us/ai" target="_blank" style="color:#00ffcc;">Microsoft Learn</a></li>
+<li><a href="https://ocw.mit.edu/courses/ai/" target="_blank" style="color:#00ffcc;">MIT OpenCourseWare</a></li>
 </ul>
+
 <h3>YouTube Channels</h3>
 <ul>
 <li>freeCodeCamp</li>
@@ -232,36 +243,8 @@ window.onload = function() {
 </section>
 
 <!-- ================= CAREER ================= -->
-<section id="career">
+<section id="career" style="padding:40px 20px;">
 <h2>Career Opportunities</h2>
 <ul>
 <li>AI Engineer</li>
-<li>Data Scientist</li>
-<li>Cyber Security Analyst</li>
-<li>Ethical Hacker</li>
-<li>Security Architect</li>
-<li>Research Scientist</li>
-</ul>
-</section>
-
-<!-- ================= HELP ================= -->
-<section id="help">
-<h2>Help & Support</h2>
-<p>Step-by-step guidance for beginners and professionals. Start small, practice consistently, and build real-world skills.</p>
-<p class="highlight">All content, examples, projects, and resources are included here.</p>
-</section>
-
-<!-- ================= FUTURE ================= -->
-<section>
-<h2>Future of AI & Cyber Security</h2>
-<p>AI & Cyber Security will dominate technology, finance, healthcare, and governance. Skilled professionals will always be in demand.</p>
-</section>
-
-<footer>
-<p>© 2026 ForgeWithRahul | Built for learners & innovators</p>
-</footer>
-
-</div> <!-- End mainContent -->
-
-</body>
-</html>
+<li>Data
