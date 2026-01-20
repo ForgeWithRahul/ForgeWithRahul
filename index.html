@@ -8,8 +8,51 @@
 <meta name="author" content="Rahul Singh">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<script>
+// Simple JS for intro animation and login flow
+window.onload = function() {
+    const videoScreen = document.getElementById('videoScreen');
+    const loginScreen = document.getElementById('loginScreen');
+    const mainContent = document.getElementById('mainContent');
+
+    // Show video intro first
+    setTimeout(() => {
+        videoScreen.style.display = 'none';
+        loginScreen.style.display = 'flex';
+    }, 5000); // 5 seconds intro video
+
+    // Handle login submit
+    document.getElementById('loginBtn').onclick = function() {
+        const username = document.getElementById('username').value;
+        if(username.trim() !== '') {
+            loginScreen.style.display = 'none';
+            mainContent.style.display = 'block';
+        } else {
+            alert('Please enter a valid username/email/phone');
+        }
+    };
+};
+</script>
 </head>
 <body>
+
+<!-- ================= VIDEO INTRO ================= -->
+<div id="videoScreen">
+  <video autoplay muted>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  </video>
+  <button id="skipBtn" onclick="document.getElementById('videoScreen').style.display='none'; document.getElementById('loginScreen').style.display='flex';">Skip Intro</button>
+</div>
+
+<!-- ================= LOGIN SCREEN ================= -->
+<div id="loginScreen" style="display:none; flex-direction:column; justify-content:center; align-items:center; height:100vh; background:black; color:#00ffcc;">
+  <h1>Welcome to ForgeWithRahul</h1>
+  <input type="text" id="username" placeholder="Enter Username / Email / Phone">
+  <button id="loginBtn">Proceed</button>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div id="mainContent" style="display:none;">
 
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
@@ -65,10 +108,8 @@
 <a href="https://www.ibm.com/cloud/learn/what-is-artificial-intelligence" target="_blank">IBM AI Learning Hub</a> | 
 <a href="https://www.youtube.com/watch?v=2ePf9rue1Ao" target="_blank">AI Crash Course - YouTube</a>
 <img src="https://images.unsplash.com/photo-1581093588401-39f09c646ce3" alt="AI Example">
-</section>
 
 <!-- ================= MACHINE LEARNING ================= -->
-<section>
 <h2>Machine Learning (ML)</h2>
 <p>Machine Learning allows systems to learn from data without explicit programming.</p>
 <h3>Types of ML</h3>
@@ -80,19 +121,15 @@
 <a href="https://www.microsoft.com/en-us/ai/machine-learning" target="_blank">Microsoft ML Docs</a> | 
 <a href="https://www.youtube.com/watch?v=ukzFI9rgwfU" target="_blank">Machine Learning Tutorial - YouTube</a>
 <img src="https://images.unsplash.com/photo-1612831669393-f6e3b8bb70f5" alt="Machine Learning">
-</section>
 
 <!-- ================= DEEP LEARNING ================= -->
-<section>
 <h2>Deep Learning</h2>
 <p>Deep Learning uses neural networks inspired by the human brain. It powers technologies like speech recognition, image processing, and autonomous systems.</p>
 <a href="https://www.deeplearning.ai/" target="_blank">DeepLearning.ai</a> | 
 <a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank">Deep Learning Tutorial - YouTube</a>
 <img src="https://images.unsplash.com/photo-1612831692341-234a9b29f0a2" alt="Deep Learning AI">
-</section>
 
 <!-- ================= CYBER SECURITY ================= -->
-<section>
 <h2>Cyber Security</h2>
 <p>Cyber Security protects systems, networks, and data from digital attacks.</p>
 <ul>
@@ -104,10 +141,8 @@
 <a href="https://www.cisa.gov/cybersecurity" target="_blank">CISA Cybersecurity Resources</a> | 
 <a href="https://www.youtube.com/watch?v=3HjBL-0JdJg" target="_blank">Cyber Security Full Course - YouTube</a>
 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Cyber Security">
-</section>
 
 <!-- ================= ETHICAL HACKING ================= -->
-<section>
 <h2>Ethical Hacking</h2>
 <p>Ethical hacking identifies vulnerabilities legally to strengthen system security.</p>
 <ul>
@@ -119,6 +154,14 @@
 <a href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/" target="_blank">CEH Certification</a> | 
 <a href="https://www.youtube.com/watch?v=1NRh6h8s6wM" target="_blank">Ethical Hacking Tutorial - YouTube</a>
 <img src="https://images.unsplash.com/photo-1612831455549-d89e2d7d8d8f" alt="Ethical Hacking">
+
+<!-- ================= EXTRA IMAGES & ANIMATED PLACEHOLDERS ================= -->
+<section>
+<h2>Featured AI & Hacking Animations</h2>
+<img src="https://images.unsplash.com/photo-1612831600000-abcdef" alt="AI Animation 1" class="animated-img">
+<img src="https://images.unsplash.com/photo-1612831600001-abcdef" alt="Hacking Animation 2" class="animated-img">
+<img src="https://images.unsplash.com/photo-1612831600002-abcdef" alt="Cyber Security Animation 3" class="animated-img">
+<img src="https://images.unsplash.com/photo-1612831600003-abcdef" alt="AI & Hacking Animation 4" class="animated-img">
 </section>
 
 <!-- ================= TOOLS ================= -->
@@ -217,6 +260,8 @@
 <footer>
 <p>© 2026 ForgeWithRahul | Built for learners & innovators</p>
 </footer>
+
+</div> <!-- End mainContent -->
 
 </body>
 </html>
