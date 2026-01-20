@@ -214,3 +214,212 @@ footer{
     linear-gradient(#000,#000) padding-box,
     linear-gradient(90deg,#00ffcc,#a855f7,#00ffcc) border-box;
 }
+/* ================= COLOR SYSTEM ================= */
+:root{
+  --neon-cyan:#00ffe1;
+  --neon-blue:#00aaff;
+  --neon-purple:#a855f7;
+  --neon-pink:#ff2fdc;
+  --neon-orange:#ff9f1c;
+  --neon-green:#39ff14;
+  --dark-bg:#000;
+}
+
+/* ================= SECTION – GOD BORDER ================= */
+section{
+  position:relative;
+  margin:70px 25px;
+  padding:50px;
+  border-radius:35px;
+  background:rgba(5,8,15,.75);
+  backdrop-filter:blur(14px);
+  overflow:hidden;
+}
+
+section::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:35px;
+  background:
+    linear-gradient(130deg,
+      var(--neon-cyan),
+      var(--neon-blue),
+      var(--neon-purple),
+      var(--neon-pink),
+      var(--neon-orange),
+      var(--neon-cyan)
+    );
+  animation:borderFlow 7s linear infinite;
+  z-index:-1;
+}
+
+@keyframes borderFlow{
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
+}
+
+/* ================= HEADINGS – AVATAR TEXT ================= */
+h1,h2,h3{
+  margin-bottom:20px;
+  background:linear-gradient(
+    90deg,
+    var(--neon-cyan),
+    var(--neon-purple),
+    var(--neon-pink),
+    var(--neon-cyan)
+  );
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:
+    0 0 25px rgba(0,255,225,.5),
+    0 0 60px rgba(168,85,247,.4);
+}
+
+h2{
+  padding-left:18px;
+  border-left:5px solid var(--neon-cyan);
+}
+
+/* ================= PARAGRAPH – PREMIUM CARDS ================= */
+p{
+  position:relative;
+  margin:22px 0;
+  padding:22px 28px;
+  border-radius:20px;
+  font-size:1.05rem;
+  color:#eafffb;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.6),rgba(10,15,25,.9));
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    0 0 20px rgba(0,255,225,.25);
+}
+
+/* paragraph neon side bar */
+p::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:10%;
+  width:5px;
+  height:80%;
+  border-radius:10px;
+  background:linear-gradient(
+    180deg,
+    var(--neon-cyan),
+    var(--neon-purple),
+    var(--neon-pink)
+  );
+  box-shadow:0 0 20px var(--neon-cyan);
+}
+
+/* ================= IMPORTANT TEXT AUTO-GLOW ================= */
+p strong,
+li strong{
+  color:var(--neon-orange);
+  text-shadow:0 0 12px rgba(255,159,28,.8);
+}
+
+/* ================= LIST ITEMS – HOLOGRAM PANELS ================= */
+ul{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+
+ul li{
+  list-style:none;
+  padding:25px;
+  border-radius:22px;
+  color:#f2fffc;
+  background:
+    linear-gradient(145deg,rgba(5,10,20,.9),rgba(0,0,0,.9));
+  position:relative;
+  overflow:hidden;
+}
+
+ul li::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  padding:2px;
+  background:linear-gradient(
+    120deg,
+    var(--neon-green),
+    var(--neon-cyan),
+    var(--neon-purple),
+    var(--neon-pink)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+}
+
+ul li:hover{
+  transform:translateY(-10px) scale(1.04);
+  box-shadow:
+    0 0 35px rgba(0,255,225,.7),
+    0 0 70px rgba(255,47,220,.4);
+}
+
+/* ================= HIGHLIGHT BOX – HERO INFO ================= */
+.highlight{
+  padding:28px;
+  border-radius:25px;
+  background:
+    radial-gradient(circle at top,
+      rgba(0,255,225,.15),
+      rgba(0,0,0,.85)
+    );
+  border:2px solid transparent;
+  background-clip:padding-box;
+  position:relative;
+}
+
+.highlight::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:25px;
+  background:linear-gradient(
+    90deg,
+    var(--neon-cyan),
+    var(--neon-purple),
+    var(--neon-orange),
+    var(--neon-cyan)
+  );
+  z-index:-1;
+}
+
+/* ================= IMAGES – AVATAR GLASS ================= */
+img{
+  border-radius:30px;
+  margin:35px 0;
+  box-shadow:
+    0 0 35px rgba(0,255,225,.6),
+    0 0 80px rgba(168,85,247,.35);
+  border:3px solid transparent;
+  background:
+    linear-gradient(#000,#000) padding-box,
+    linear-gradient(45deg,
+      var(--neon-cyan),
+      var(--neon-pink),
+      var(--neon-blue)
+    ) border-box;
+}
+
+/* ================= LINKS – ENERGY LINE ================= */
+a{
+  color:var(--neon-cyan);
+  font-weight:500;
+}
+
+a:hover{
+  color:var(--neon-orange);
+  text-shadow:0 0 12px rgba(255,159,28,.8);
+}
