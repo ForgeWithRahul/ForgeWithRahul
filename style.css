@@ -1,210 +1,166 @@
-/* ================= GENERAL STYLES ================= */
+/* ================= GLOBAL STYLES ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
+    transition: all 0.3s ease;
+    color: #00ffcc;
+    background-color: #0a0a0a;
 }
 
 body {
-    background: radial-gradient(circle at top left, #0b0c1a, #000);
+    line-height: 1.6;
+    background: #0a0a0a;
     color: #00ffcc;
-    overflow-x: hidden;
 }
 
 a {
-    color: #00ffcc;
     text-decoration: none;
-    transition: 0.3s;
+    color: #00ffcc;
 }
-a:hover {
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 /* ================= NAVBAR ================= */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    background: rgba(0,0,0,0.8);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 15px 30px;
+    background: #000;
+    position: sticky;
+    top: 0;
     z-index: 999;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px #00ffcc;
-}
-
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00ffcc;
-    text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffff;
+    box-shadow: 0 2px 10px rgba(0,255,204,0.3);
 }
 
 .navbar ul {
-    list-style: none;
     display: flex;
-    gap: 25px;
-}
-
-.navbar ul li a {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: 0.3s;
+    list-style: none;
+    gap: 20px;
 }
 
 .navbar ul li a:hover {
-    background: #00ffcc20;
-    box-shadow: 0 0 10px #00ffcc;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
 }
 
 /* ================= HERO ================= */
-header#home {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+header {
     text-align: center;
+    padding: 50px 20px;
+    background-size: cover;
+    background-position: center;
     position: relative;
     overflow: hidden;
 }
 
-header#home h1 {
-    font-size: 60px;
-    color: #00ffcc;
-    text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffff;
-    animation: glowText 2s infinite alternate;
+header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 0 0 20px #00ffcc;
+    margin-bottom: 15px;
 }
 
-header#home .tagline {
-    font-size: 24px;
-    margin: 20px 0;
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-    animation: glowText 3s infinite alternate-reverse;
+header p.tagline {
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-header#home .hero-img {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.1;
-    z-index: -1;
+header img.hero-img {
+    max-width: 80%;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #00ffcc;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Floating animation for hero img */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 /* ================= SECTIONS ================= */
 section {
-    padding: 100px 50px 80px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    animation: fadeInUp 1.5s ease-in-out;
+    padding: 50px 20px;
+    border-bottom: 1px solid rgba(0,255,204,0.2);
 }
 
 section h2 {
-    font-size: 36px;
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
 }
 
 section h3 {
-    font-size: 24px;
-    margin-top: 15px;
-    color: #ff00ff;
-    text-shadow: 0 0 8px #ff00ff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
 }
 
 section p, section li {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-section ul {
-    margin: 15px 0 20px 20px;
-}
-
-section a {
-    font-weight: bold;
-}
-
-/* ================= CARDS & LISTS ================= */
-section ul li {
+    font-size: 1.1rem;
     margin-bottom: 10px;
-    padding: 10px 15px;
-    background: rgba(0,255,204,0.05);
-    border-left: 3px solid #00ffcc;
-    transition: 0.3s;
+    line-height: 1.5;
 }
-section ul li:hover {
-    background: rgba(255,0,255,0.1);
-    border-left: 3px solid #ff00ff;
-    transform: translateX(10px);
-    box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
+
+/* Highlight class for important notes */
+.highlight {
+    font-weight: bold;
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+/* ================= IMAGES ================= */
+section img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffcc;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+section img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+/* Animated images */
+.animated-img {
+    max-width: 45%;
+    margin: 20px;
+    border-radius: 15px;
+    animation: rotateScale 8s infinite alternate;
+}
+
+@keyframes rotateScale {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
 }
 
 /* ================= BUTTONS ================= */
-button {
-    padding: 12px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    background: linear-gradient(45deg,#00ffcc,#ff00ff);
-    color: #000;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-shadow: 0 0 5px #fff;
-}
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00ffcc, 0 0 30px #ff00ff;
-}
-
-/* ================= LOGIN SCREEN ================= */
-#loginScreen {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background: radial-gradient(circle at center,#020c1b,#000);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:#00ffcc;
-    z-index: 1000;
-    animation: fadeIn 2s;
-}
-
-#loginScreen input {
-    margin: 12px 0;
-    padding: 12px 20px;
-    width: 300px;
+button, input[type="text"] {
     border-radius: 8px;
-    border: 2px solid #00ffcc;
-    background: transparent;
-    color: #00ffcc;
+    border: none;
+    padding: 10px 20px;
     font-size: 16px;
-    text-align: center;
-    transition: 0.3s;
+    outline: none;
 }
 
-#loginScreen input:focus {
-    outline: none;
-    border-color: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff,0 0 20px #00ffcc;
+button:hover {
+    cursor: pointer;
+    background: #ff00ff;
+    color: #000;
+    box-shadow: 0 0 10px #ff00ff;
+    transform: scale(1.05);
 }
 
 /* ================= VIDEO SCREEN ================= */
@@ -213,97 +169,106 @@ button:hover {
     top:0;
     left:0;
     width:100%;
-    height:100vh;
+    height:100%;
     background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
     z-index:10000;
 }
 
 #videoScreen video {
-    width: 80%;
-    max-width: 900px;
-    border: 5px solid #00ffcc;
-    border-radius: 15px;
-    box-shadow: 0 0 20px #00ffcc, 0 0 30px #ff00ff;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-#videoScreen button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: linear-gradient(45deg,#00ffcc,#ff00ff);
-    border:none;
+#skipBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 25px;
+    font-weight: bold;
+    background: #00ffcc;
+    border: none;
+    color: black;
+    cursor: pointer;
     border-radius: 10px;
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
-#videoScreen button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #00ffcc, 0 0 25px #ff00ff;
+
+#skipBtn:hover {
+    background: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+/* ================= LOGIN SCREEN ================= */
+#loginScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+}
+
+#loginScreen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#loginScreen input[type="text"] {
+    width: 300px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #111;
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+}
+
+#loginScreen button {
+    background: #00ffcc;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#loginScreen button:hover {
+    background: #ff00ff;
+    color: white;
+    box-shadow: 0 0 15px #ff00ff;
 }
 
 /* ================= FOOTER ================= */
 footer {
-    padding: 30px 20px;
+    padding: 20px;
     text-align: center;
-    background: rgba(0,0,0,0.9);
+    background: #000;
     color: #00ffcc;
-    box-shadow: 0 -2px 20px #00ffcc;
+    border-top: 1px solid rgba(0,255,204,0.3);
 }
 
-/* ================= ANIMATIONS ================= */
-@keyframes glowText {
-    0% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffff; }
-    50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffcc; }
-    100% { text-shadow: 0 0 15px #00ffcc, 0 0 30px #ff00ff; }
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #000;
+        padding: 10px;
+    }
 
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(50px);}
-    100% { opacity: 1; transform: translateY(0);}
-}
+    header h1 {
+        font-size: 3rem;
+    }
 
-@keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-}
+    header p.tagline {
+        font-size: 1.2rem;
+    }
 
-/* ================= ANIMATED IMAGES ================= */
-.animated-img {
-    width: 100%;
-    max-width: 350px;
-    margin: 20px;
-    border-radius: 15px;
-    animation: float 4s ease-in-out infinite;
-}
+    .animated-img {
+        max-width: 90%;
+        margin: 20px auto;
+    }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-/* ================= FLOATING PARTICLES (SIMPLIFIED) ================= */
-#particles {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    z-index: -1;
-}
-
-/* ================= SCROLL PROGRESS BAR ================= */
-#progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background: linear-gradient(90deg,#00ffcc,#ff00ff);
-    width: 0%;
-    z-index: 999;
+    section img {
+        max-width: 100%;
+    }
 }
