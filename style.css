@@ -1,29 +1,17 @@
-/* ================= GLOBAL STYLES ================= */
+/* ================= GLOBAL RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
-    transition: all 0.3s ease;
-    color: #00ffcc;
-    background-color: #0a0a0a;
+    font-family: 'Arial', sans-serif;
 }
 
+/* ================= BODY & BACKGROUND ================= */
 body {
-    line-height: 1.6;
-    background: #0a0a0a;
+    background: linear-gradient(135deg, #000000, #0a0a0a);
     color: #00ffcc;
-}
-
-a {
-    text-decoration: none;
-    color: #00ffcc;
-}
-
-ul, ol {
-    padding-left: 20px;
-    margin-bottom: 20px;
+    overflow-x: hidden;
 }
 
 /* ================= NAVBAR ================= */
@@ -31,244 +19,242 @@ ul, ol {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: #000;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.85);
     position: sticky;
     top: 0;
-    z-index: 999;
-    box-shadow: 0 2px 10px rgba(0,255,204,0.3);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #00ffcc;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
 }
 
-.navbar ul li a:hover {
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff;
+.navbar ul li a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00ffcc;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
 }
 
 /* ================= HERO ================= */
 header {
     text-align: center;
-    padding: 50px 20px;
-    background-size: cover;
-    background-position: center;
+    padding: 80px 20px;
     position: relative;
-    overflow: hidden;
 }
 
 header h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    text-shadow: 0 0 20px #00ffcc;
-    margin-bottom: 15px;
+    font-size: 5vw;
+    font-weight: bold;
+    text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    animation: neonGlow 2s ease-in-out infinite alternate;
 }
 
-header p.tagline {
-    font-size: 1.8rem;
-    text-shadow: 0 0 10px #00ffcc;
-}
-
-header img.hero-img {
-    max-width: 80%;
+header .tagline {
+    font-size: 2vw;
     margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 30px #00ffcc;
-    animation: float 6s ease-in-out infinite;
+    text-shadow: 0 0 10px #00ffcc;
+    animation: neonGlow 3s ease-in-out infinite alternate-reverse;
 }
 
-/* Floating animation for hero img */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+header img {
+    max-width: 90%;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px #00ffcc, 0 0 80px #00ffcc;
+    transition: transform 0.5s;
+}
+
+header img:hover {
+    transform: scale(1.05) rotate(1deg);
 }
 
 /* ================= SECTIONS ================= */
 section {
-    padding: 50px 20px;
-    border-bottom: 1px solid rgba(0,255,204,0.2);
+    padding: 60px 40px;
+    border-bottom: 1px solid #00ffcc33;
 }
 
 section h2 {
-    font-size: 2.5rem;
+    font-size: 3vw;
     margin-bottom: 20px;
-    color: #ff00ff;
-    text-shadow: 0 0 10px #ff00ff;
+    text-shadow: 0 0 10px #00ffcc;
+    position: relative;
 }
 
-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #00ffff;
-    text-shadow: 0 0 5px #00ffff;
+section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #00ffcc;
+    margin-top: 5px;
+    animation: slideIn 1.5s ease forwards;
 }
 
-section p, section li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    line-height: 1.5;
+section p, section ul, section li, section a {
+    font-size: 1.2vw;
+    line-height: 1.8;
 }
 
-/* Highlight class for important notes */
-.highlight {
-    font-weight: bold;
-    color: #ff00ff;
-    text-shadow: 0 0 5px #ff00ff;
+section a {
+    color: #00ffcc;
+    text-decoration: underline;
+    transition: 0.3s;
 }
 
-/* ================= IMAGES ================= */
-section img {
+section a:hover {
+    color: #ffffff;
+}
+
+/* ================= IMAGE ANIMATIONS ================= */
+img {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 20px #00ffcc;
-    margin: 20px 0;
-    transition: transform 0.3s ease;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
-section img:hover {
+img:hover {
     transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc;
 }
 
-/* Animated images */
 .animated-img {
-    max-width: 45%;
-    margin: 20px;
-    border-radius: 15px;
-    animation: rotateScale 8s infinite alternate;
+    animation: float 6s ease-in-out infinite;
 }
 
-@keyframes rotateScale {
-    0% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(5deg); }
-    100% { transform: scale(1) rotate(0deg); }
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ================= HIGHLIGHT ================= */
+.highlight {
+    font-weight: bold;
+    color: #00ffcc;
+    background: rgba(0,255,204,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: glow 2s infinite alternate;
 }
 
 /* ================= BUTTONS ================= */
-button, input[type="text"] {
-    border-radius: 8px;
+button {
+    background: linear-gradient(45deg, #00ffcc, #006666);
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    outline: none;
+    padding: 12px 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc inset;
+    transition: 0.3s;
 }
 
 button:hover {
-    cursor: pointer;
-    background: #ff00ff;
-    color: #000;
-    box-shadow: 0 0 10px #ff00ff;
+    background: linear-gradient(45deg, #00ffcc, #00ffff);
     transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc inset;
 }
 
-/* ================= VIDEO SCREEN ================= */
-#videoScreen {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:black;
-    z-index:10000;
+/* ================= FOOTER ================= */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: rgba(0,0,0,0.9);
+    color: #00ffcc;
+    border-top: 2px solid #00ffcc;
+    font-size: 1vw;
 }
 
+/* ================= VIDEO INTRO ================= */
 #videoScreen video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.7);
 }
 
 #skipBtn {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 12px 25px;
+    padding: 12px 20px;
     font-weight: bold;
     background: #00ffcc;
     border: none;
-    color: black;
     cursor: pointer;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #00ffcc;
+    transition: 0.3s;
 }
 
 #skipBtn:hover {
-    background: #ff00ff;
-    color: #fff;
-    box-shadow: 0 0 15px #ff00ff;
+    background: #00ffff;
+    transform: scale(1.1);
 }
 
-/* ================= LOGIN SCREEN ================= */
-#loginScreen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: black;
+/* ================= ANIMATIONS ================= */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+    50% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+    100% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
 }
 
-#loginScreen h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #00ffcc; }
+    100% { box-shadow: 0 0 20px #00ffcc; }
 }
 
-#loginScreen input[type="text"] {
-    width: 300px;
-    margin-bottom: 15px;
-    padding: 12px;
-    background: #111;
-    color: #00ffcc;
-    border: 2px solid #00ffcc;
-}
-
-#loginScreen button {
-    background: #00ffcc;
-    color: black;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-#loginScreen button:hover {
-    background: #ff00ff;
-    color: white;
-    box-shadow: 0 0 15px #ff00ff;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #000;
-    color: #00ffcc;
-    border-top: 1px solid rgba(0,255,204,0.3);
+@keyframes slideIn {
+    0% { width: 0; opacity: 0; }
+    100% { width: 100px; opacity: 1; }
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-        background: #000;
-        padding: 10px;
-    }
+@media screen and (max-width: 1200px) {
+    header h1 { font-size: 6vw; }
+    header .tagline { font-size: 3vw; }
+    section h2 { font-size: 4vw; }
+    section p, section ul, section li, section a { font-size: 1.5vw; }
+}
 
-    header h1 {
-        font-size: 3rem;
-    }
+@media screen and (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; padding: 15px 20px; }
+    .navbar ul { flex-direction: column; gap: 10px; align-items: center; }
+    header h1 { font-size: 7vw; }
+    header .tagline { font-size: 4vw; }
+    section h2 { font-size: 5vw; }
+    section p, section ul, section li, section a { font-size: 2vw; }
+    button { padding: 10px 18px; }
+}
 
-    header p.tagline {
-        font-size: 1.2rem;
-    }
-
-    .animated-img {
-        max-width: 90%;
-        margin: 20px auto;
-    }
-
-    section img {
-        max-width: 100%;
-    }
+@media screen and (max-width: 480px) {
+    header h1 { font-size: 8vw; }
+    header .tagline { font-size: 5vw; }
+    section h2 { font-size: 6vw; }
+    section p, section ul, section li, section a { font-size: 2.5vw; }
 }
